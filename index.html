@@ -1,72 +1,20 @@
-<!doctype html>
-<html lang="nl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-<meta name="theme-color" content="#05060a">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icon.svg">
-<title>PhotoPro</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="app">
-<header>
-  <div class="brand"><i></i><div><b>PHOTOPRO</b><small>SMART CAMERA</small></div></div>
-  <span id="state">READY</span>
-</header>
-
+<!doctype html><html lang="nl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#05060a"><meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon.svg">
+<title>PhotoPro</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="app">
+<header><div class="brand"><i></i><div><b>PHOTOPRO</b><small>SMART CAMERA</small></div></div><span id="state">READY</span></header>
 <main>
-  <nav class="modes">
-    <button class="mode active" data-mode="landscape"><strong>🌄</strong><span>Landschap</span></button>
-    <button class="mode" data-mode="portrait"><strong>◉</strong><span>Portret</span></button>
-    <button class="mode" data-mode="selfie"><strong>🤳</strong><span>Selfie</span></button>
-  </nav>
-
-  <section class="cameraCard">
-    <div class="viewer">
-      <video id="video" autoplay playsinline muted></video>
-      <div class="grid"></div><div class="focus"></div>
-      <div class="hud top"><span id="resolution">AUTO</span><span id="scene">LANDSCHAP</span><span>SMART HDR</span></div>
-      <div class="hud bottom"><span id="evMini">EV 0.0</span><span id="zoomMini">1.0×</span><span>PRO AUTO</span></div>
-    </div>
-
-    <div class="controls">
-      <button id="flip" class="round">↻</button>
-      <button id="capture" class="shutter"><i></i></button>
-      <button id="settings" class="round">☷</button>
-    </div>
-
-    <div class="quick">
-      <button id="hdr"><b>HDR</b><small>SMART</small></button>
-      <button id="exposure"><b>☀ 0.0</b><small>LICHT</small></button>
-      <button id="timer"><b>OFF</b><small>TIMER</small></button>
-      <button id="flash"><b>⚡</b><small>FLITS</small></button>
-    </div>
-  </section>
-
-  <section class="looks">
-    <div class="sectionHead"><div><b>PHOTO LOOKS</b><small>Kies een look vóór je foto maakt</small></div><span id="selectedLook">NATURAL</span></div>
-    <div id="filters" class="filters"></div>
-  </section>
-
-  <section id="proPanel" class="panel hidden">
-    <div class="panelHead"><b>PRO CONTROLS</b><button id="close">×</button></div>
-    <label>Belichting <output id="evOut">0.0</output><input id="ev" type="range" min="-2" max="2" step=".1" value="0"></label>
-    <label>Zoom <output id="zoomOut">1.0×</output><input id="zoom" type="range" min="1" max="1" step=".1" value="1"></label>
-    <div class="chips"><button class="active">AUTO SCENE</button><button>FOCUS LOCK</button><button>STABILITY</button><button>DETAIL</button></div>
-  </section>
-
-  <section class="engine">
-    <div class="engineLine"><span><i></i> PHOTO ENGINE</span><b id="engineText">READY</b></div>
-    <div class="steps"><span id="s1">CAPTURE</span><span id="s2">TONE</span><span id="s3">DETAIL</span><span id="s4">SAVE</span></div>
-  </section>
-
-  <p class="privacy">De verbeterde foto wordt lokaal verwerkt. Geen upload. Android kan automatisch downloaden; iPhone vereist een gebruikersactie voor Foto's.</p>
-</main>
-<div id="toast"></div>
-</div>
-<script src="app.js"></script>
-</body>
-</html>
+<section class="camera">
+<div class="viewer"><video id="video" autoplay playsinline muted></video><div class="grid"></div><div class="focus"></div>
+<div class="hud"><span id="resolution">AUTO</span><span id="scene">LANDSCHAP</span><span>PRO AUTO</span></div></div>
+<div class="modeRow"><button class="mode active" data-mode="landscape">🌄 <span>Landschap</span></button><button class="mode" data-mode="portrait">◉ <span>Portret</span></button><button class="mode" data-mode="selfie">🤳 <span>Selfie</span></button></div>
+<div class="lookTitle"><b>LOOKS</b><small id="selected">NATURAL</small></div>
+<div id="filters" class="filters"></div>
+<div class="quick"><button id="hdr"><b>HDR</b><small>AUTO</small></button><button id="evBtn"><b>☀ 0.0</b><small>LICHT</small></button><button id="timer"><b>OFF</b><small>TIMER</small></button><button id="flip">↻</button></div>
+<div class="bottom"><button id="settings">⚙</button><button id="capture" class="shutter"><i></i></button><button id="zoomBtn">1×</button></div>
+</section>
+<section class="hiddenPanel" id="panel"><label>Belichting <output id="evOut">0.0</output><input id="ev" type="range" min="-2" max="2" step=".1" value="0"></label><label>Zoom <output id="zoomOut">1.0×</output><input id="zoom" type="range" min="1" max="1" step=".1" value="1"></label></section>
+<p class="note">PhotoPro verbetert elke foto automatisch en slaat hem direct op als JPG. Verwerking gebeurt lokaal.</p>
+</main><div id="toast"></div></div><script src="app.js"></script></body></html>
