@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#05060a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>PhotoPro Ultra</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand"><i></i><div><b>PHOTOPRO</b><small>ULTRA CAMERA</small></div></div>
+  <div class="status"><i></i><span id="status">READY</span></div>
+</header>
+
+<main>
+<nav class="modes">
+  <button class="mode active" data-mode="landscape"><b>🌄</b><span>Landschap</span></button>
+  <button class="mode" data-mode="portrait"><b>◉</b><span>Portret</span></button>
+  <button class="mode" data-mode="selfie"><b>🤳</b><span>Selfie</span></button>
+</nav>
+
+<section class="camera">
+  <div class="viewer">
+    <video id="video" autoplay playsinline muted></video>
+    <div class="grid"></div><div class="focus"></div>
+    <div class="hud top"><span id="res">AUTO</span><span id="scene">LANDSCHAP</span><span>SMART HDR</span></div>
+    <div class="hud bottom"><span id="evMini">EV 0.0</span><span id="zoomMini">1.0×</span><span>PRO AUTO</span></div>
+  </div>
+  <div class="controls">
+    <button id="flip" class="circle">↻</button>
+    <button id="capture" class="shutter"><i></i></button>
+    <button id="tools" class="circle">☷</button>
+  </div>
+  <div class="quick">
+    <button id="hdr"><b>HDR</b><small>SMART</small></button>
+    <button id="exposure"><b>☀ 0.0</b><small>LICHT</small></button>
+    <button id="timer"><b>OFF</b><small>TIMER</small></button>
+    <button id="flash"><b>⚡</b><small>FLITS</small></button>
+  </div>
+</section>
+
+<section class="result">
+  <div class="resultHead">
+    <div><b>PHOTO ENGINE</b><small id="processStatus">Automatische optimalisatie actief</small></div>
+    <span>LOCAL • ULTRA</span>
+  </div>
+  <div class="previewWrap"><canvas id="result"></canvas><div id="empty">Maak een foto<br><small>PhotoPro verbetert hem automatisch</small></div></div>
+  <div id="progress"><i></i></div>
+  <div class="filtersHead"><b>10 LOOKS</b><small>OPTIE — AUTO IS AANBEVOLEN</small></div>
+  <div id="filters" class="filters"></div>
+  <div class="saveRow">
+    <button id="save" disabled>BEWAAR IN FOTO'S / DOWNLOAD <span>→</span></button>
+    <button id="reset">AUTO</button>
+  </div>
+  <p class="privacy">Verwerking gebeurt op je telefoon. Geen foto-upload.</p>
+</section>
+
+<section id="panel" class="panel hidden">
+  <div class="panelHead"><b>PRO CONTROLS</b><button id="close">×</button></div>
+  <label>Belichting <output id="evOut">0.0</output><input id="ev" type="range" min="-2" max="2" step=".1" value="0"></label>
+  <label>Zoom <output id="zoomOut">1.0×</output><input id="zoom" type="range" min="1" max="1" step=".1" value="1"></label>
+  <div class="chips"><button class="active">AUTO SCENE</button><button>FOCUS LOCK</button><button>STABILITY</button><button>DETAIL</button></div>
+  <p class="note">PhotoPro vraagt maximale cameraresolutie, continue focus en passende hardware-opties wanneer de browser die beschikbaar stelt. RAW, ISO, sluitertijd en volledige lenscontrole kunnen in een PWA niet universeel worden afgedwongen.</p>
+</section>
+
+<section class="info">✦ <div><b>Automatisch opslaan</b><small>Na het maken wordt de verbeterde foto direct klaargezet als JPG. Android kan hem als download opslaan; iPhone/Safari kan een PWA niet stilletjes toestemming geven om rechtstreeks in Foto's te schrijven.</small></div></section>
+</main>
+<div id="toast"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
