@@ -1,0 +1,46 @@
+<!doctype html><html lang="nl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#05060a"><meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon.svg">
+<title>PhotoPro</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="app">
+<header><div class="brand"><span class="dot"></span><div><b>PHOTOPRO</b><small>AI CAMERA</small></div></div><button id="install" hidden>INSTALL</button></header>
+<main>
+<div class="modes">
+<button class="mode active" data-mode="landscape"><span>LAND</span><strong>🌄</strong></button>
+<button class="mode" data-mode="portrait"><span>PORTRAIT</span><strong>◉</strong></button>
+<button class="mode" data-mode="selfie"><span>SELFIE</span><strong>🤳</strong></button></div>
+
+<section class="hero">
+<div class="viewer"><video id="video" autoplay playsinline muted></video><canvas id="canvas" hidden></canvas>
+<div class="scan"></div><div class="corners"></div><div class="focus"></div>
+<div class="topstats"><span id="res">--</span><span>PRO AUTO</span><span id="lens">BACK</span></div>
+<div class="bottomstats"><span id="scene">LANDSCAPE</span><span id="evmini">EV 0.0</span><span>HDR AUTO</span></div>
+</div>
+<div class="capturebar">
+<button id="flip" class="glass">↻</button>
+<button id="capture" class="capture"><i></i></button>
+<button id="advanced" class="glass">☷</button>
+</div>
+</section>
+
+<section class="controlrow">
+<button id="hdr"><b>HDR</b><small>AUTO</small></button>
+<button id="exposure"><b>☀ 0.0</b><small>EXPOSURE</small></button>
+<button id="timer"><b>OFF</b><small>TIMER</small></button>
+<button id="flash"><b>⚡</b><small>FLASH</small></button>
+</section>
+
+<section class="compare">
+<div><label>STANDARD</label><div class="thumb"><video id="original" autoplay playsinline muted></video></div><p>Normale camera</p></div>
+<div class="featured"><label>PHOTOPRO</label><div class="thumb"><video id="pro" autoplay playsinline muted></video><em>OPTIMIZED</em></div><p id="protext">Max resolution · focus · stability</p></div>
+</section>
+
+<section id="panel" class="panel hidden"><div class="paneltitle"><b>PRO CONTROLS</b><button id="close">×</button></div>
+<label>EXPOSURE <output id="evout">0.0</output><input id="ev" type="range" min="-2" max="2" step=".1" value="0"></label>
+<label>ZOOM <output id="zoomout">1.0×</output><input id="zoom" type="range" min="1" max="1" step=".1" value="1"></label>
+<div class="chips"><button class="chip active">AUTO PRO</button><button class="chip">FOCUS LOCK</button><button class="chip">STABLE</button></div>
+</section>
+
+<section class="gallery"><div class="galleryhead"><b>CAPTURES</b><span>LOCAL</span></div><div id="shots"></div></section>
+</main><div id="toast"></div></div><script src="app.js"></script></body></html>
